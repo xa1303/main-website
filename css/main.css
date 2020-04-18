@@ -1,0 +1,66 @@
+
+header h1 {
+  padding-left: 25px;
+}
+ul li {
+  display: inline-flex;
+}
+nav {
+  height: 3em;
+}
+html, body {
+  background-color: #23272A;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+nav {
+  background-color: #63ABCF;
+  color: #23272A;
+}
+img {
+  max-width: 100%;
+}
+
+.dark {
+  background-color: #23272A;
+  color: #63CF97;
+}
+
+.matcha {
+  background-color: #63CF97;
+  color: #23272A;
+}
+
+.full {
+  padding: 25px;
+  height: 100%;
+  /* min-height: 70%;  */
+}
+.slide-h2 {
+  animation-duration: 1.0s;
+}
+.slide-i {
+  animation-duration: 1.5s;
+}
+.slide-p {
+  animation-duration: 2.0s;
+}
+.slide-h2, .slide-i, .slide-p {
+  animation-name: slide;
+  animation-iteration-count: 1;
+}
+@keyframes slide {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+
+}
+
+
