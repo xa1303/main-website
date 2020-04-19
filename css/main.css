@@ -1,28 +1,31 @@
 
 header h1 {
   padding-left: 25px;
+  color: whitesmoke;
 }
-ul li {
-  display: inline-flex;
-}
-nav {
-  height: 3em;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 html, body {
   background-color: #23272A;
+  color: #63CF97;
   height: 100%;
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
   margin: 0;
   overflow-x: hidden;
 }
-nav {
-  background-color: #63ABCF;
-  color: #23272A;
+
+header div h1 {
+  padding: 0;
 }
 img {
   max-width: 100%;
 }
-
+.title {
+  display: inline-flex;
+}
 .dark {
   background-color: #23272A;
   color: #63CF97;
@@ -48,10 +51,11 @@ img {
   animation-duration: 2.0s;
 }
 .slide-h2, .slide-i, .slide-p {
-  animation-name: slide;
+  animation-name: slide-side;
   animation-iteration-count: 1;
 }
-@keyframes slide {
+
+@keyframes slide-side {
   from {
     margin-left: 100%;
     width: 300%;
@@ -60,7 +64,9 @@ img {
     margin-left: 0%;
     width: 100%;
   }
-
+}
+.part {
+  padding-top: 35vh;
 }
 
 
