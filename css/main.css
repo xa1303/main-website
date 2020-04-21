@@ -1,45 +1,104 @@
+html, body {
+  background-color: #23272A;
+  color: #63CF97;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 100%;
+}
 
-header h1 {
-  padding-left: 25px;
+header {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  background-color: #23272A;
   color: whitesmoke;
+}
+nav {
+  padding-top: 10vh;
+  color: whitesmoke
+}
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+nav button {
+  display: block;
+  margin: 2px auto;
+  /* height: 1.7rem; */
+  /* background-color: #918D8D; */
+  color: white;
+  background-color: #23272A;
+  font-family: inherit;
+  border-style: none;
+  border-radius: 20px;
 }
 ul {
   list-style-type: none;
   padding: 0;
 }
-html, body {
-  background-color: #23272A;
-  color: #63CF97;
+.portfolio {
+  /* max-width: 768px; */
+  display: flex;
+  flex-direction: column;
+}
+.portfolio div img {
+  height: 100vh;
+  max-width: 768px;
+}
+.main-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1px;
   height: 100%;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
   margin: 0;
-  overflow-x: hidden;
-}
-
-header div h1 {
   padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-img {
-  max-width: 100%;
+.img {
+  max-width: 600px;
+  
 }
-.title {
-  display: inline-flex;
+.content-wrapper, .scroll-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.content-wrapper {
+  transform: translate3d(-5px, 0, -0.5px) scale(1.5);
+}
+.matcha {
+  /* background-color: #63CF97; */
+  background-color: #2C2F33;
+  /* color: #23272A; */
+  color: #63CF97;
 }
 .dark {
   background-color: #23272A;
   color: #63CF97;
 }
-
-.matcha {
-  background-color: #63CF97;
-  color: #23272A;
+.transparent {
+  height: 100vh;
 }
-
-.full {
-  padding: 25px;
-  height: 100%;
-  /* min-height: 70%;  */
+.last {
+  height: 50%;
+}
+.content {
+  height: 100vh;
+}
+.scroll {
+  height: 50vh;
+}
+.part {
+  position: relative;
+  padding-top: 30vh;
+  margin: 0 auto;
+  max-width: 768px;
 }
 .slide-h2 {
   animation-duration: 1.0s;
@@ -49,12 +108,12 @@ img {
 }
 .slide-p {
   animation-duration: 2.0s;
+  margin: 0;
 }
 .slide-h2, .slide-i, .slide-p {
   animation-name: slide-side;
   animation-iteration-count: 1;
 }
-
 @keyframes slide-side {
   from {
     margin-left: 100%;
@@ -65,9 +124,3 @@ img {
     width: 100%;
   }
 }
-.part {
-  padding-top: 40%;
-  height: 100%;
-}
-
-
