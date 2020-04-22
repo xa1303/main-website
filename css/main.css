@@ -9,9 +9,9 @@ html, body {
 }
 
 a {
-  /* text-decoration: line-through; */
+  text-decoration: dotted underline;
   color: whitesmoke;
-  /* text-decoration-color: whitesmoke; */
+  text-decoration-color: whitesmoke;
 }
 nav {
   position: relative;
@@ -67,16 +67,21 @@ ul {
 
 .full {
   height: 100vh;
+  min-height: 600px;
 }
 .scroll {
   height: 50vh;
+  min-height: 300px;
 }
 .part {
   position: relative;
-  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  transform: translateY(-50%);
   max-width: 768px;
+  min-height: 600px;
 }
 .slide-h2 {
   animation-duration: 1.0s;
@@ -96,33 +101,10 @@ ul {
 @keyframes slide-side {
   from {
     margin-left: 100%;
-    width: 300%;
+    width: 400%;
   }
   to {
     margin-left: 0%;
     width: 100%;
-  }
-}
-
-@media only screen and (max-height: 500px) {
-  body { 
-     font-size: 0.8em; 
-  }
-}
-
-@media only screen and (max-height: 400px) {
-  body { 
-     font-size: 0.6em; 
-  }
-}
-
-@media only screen and (max-height: 300px) {
-  body { 
-     font-size: 0.4em; 
-  }
-}
-@media only screen and (max-height: 200px) {
-  body { 
-     font-size: 0.2em; 
   }
 }
