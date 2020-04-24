@@ -14,6 +14,7 @@ html, body {
 }
 .darker {
   color: #23272A;
+  background-color: #3a3a3b;
 }
 a {
   text-decoration: underline;
