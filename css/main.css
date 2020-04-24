@@ -1,23 +1,25 @@
 html, body {
+  font-family: "Century Gothic";
   background-color: #23272A;
   color: #63CF97;
-  font-family: "Montserrat", sans-serif;
   text-align: center;
   height: 100vh;
   padding: 0;
   margin: 0 auto;
 }
 a {
-  text-decoration: dotted underline;
+  text-decoration: underline;
   color: whitesmoke;
   text-decoration-color: whitesmoke;
 }
 ul {
   list-style-type: none;
   padding: 0;
+  width: 100%;
 }
 .portfolio img {
-  max-width: 540px;
+  width: 100%;
+  max-width: 1080px;
 }
 .content, .portfolio {
   display: flex;
@@ -96,4 +98,10 @@ ul {
 .slide-slowest {
   animation-duration: 2.0s;
   margin: 0;
+}
+
+@media only screen and (max-height: 1080px) and (max-width: 1920px) {
+  .portfolio img {
+    width: 600px;
+  }
 }
