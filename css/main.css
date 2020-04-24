@@ -1,16 +1,23 @@
 html, body {
   font-family: "Century Gothic";
-  background-color: #23272A;
-  color: #63CF97;
+  color: #85a8d3;
+  background-color: #3a3a3b;
   text-align: center;
   height: 100vh;
   padding: 0;
   margin: 0 auto;
+  font-size: large;
+  font-weight: 500;
+}
+.dark {
+  background-color: #404041;
+}
+.darker {
+  color: #23272A;
 }
 a {
   text-decoration: underline;
-  color: whitesmoke;
-  text-decoration-color: whitesmoke;
+  color: #d0d0d0;
 }
 ul {
   list-style-type: none;
@@ -57,14 +64,6 @@ ul {
 }
 .content-wrapper {
   transform: translate3d(-5px, 0, -0.5px) scale(1.5);
-}
-.dark {
-  background-color: #2C2F33;
-  color: #63CF97;
-}
-.darker {
-  background-color: #23272A;
-  color: #63CF97;
 }
 .full {
   height: 100vh;
