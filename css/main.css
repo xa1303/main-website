@@ -1,48 +1,92 @@
 html, body {
   font-family: "Century Gothic";
-  color: #85a8d3;
-  background-color: #3a3a3b;
+  color: #81a1c1;
+  background-color: #2e3440;
   text-align: center;
   height: 100vh;
   padding: 0;
   margin: 0 auto;
   font-size: large;
   font-weight: 500;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+#about {
+  scroll-behavior: smooth;
+}
+h1 {
+  color: #d8dee9
+}
+h3 {
+  /* color: #bf616a */
+  color: #a3be8c
+}
+h5 {
+  color: #88c0d0;
+}
+.smol {
+  color: #b48ead;
 }
 .dark {
-  background-color: #404041;
+  background-color: #373d4a;
 }
 .darker {
-  color: #23272A;
-  background-color: #3a3a3b;
+  background-color: #2e3440;
 }
 a {
-  text-decoration: underline;
-  color: #d0d0d0;
+  text-decoration: none;
+  /* color: #2e3440; */
+  color: #b48ead;
+  /* color: #8fbcbb; */
 }
 ul {
   list-style-type: none;
   padding: 0;
   width: 100%;
 }
-.portfolio img {
-  width: 100%;
-  max-width: 1080px;
+.awards {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  overflow: auto;
 }
-.content, .portfolio {
+.awards img {
+  max-height: 100vh;
+  max-width: 100vw;
+}
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.content {
-  position: relative;
+  /* position: relative; */
   margin: 0 auto;
   max-width: 768px;
   min-height: 600px;
 }
 .link {
-  padding-top: 6%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: row; */
+}
+button:hover, button:hover a {
+  cursor: pointer;
+  background-color: #b48ead;
+  color: #2e3440;
+}
+
+button {
+  border: none;
+  background-color: #373d4a;
+  padding: 8px;
+  margin: 10px;
+  border-radius: 25px;
+}
+.here, .here a {
+  background-color: #b48ead;
+  color: #2e3440;
 }
 .main-wrapper {
   position: relative;
@@ -60,10 +104,7 @@ ul {
   right: 0;
   height: 100vh;
 }
-.parallax-wrapper-back {
-  transform: translate3d(-5px, 0, -0.5px) scale(1.5);
-}
-.content-wrapper {
+.parallax-wrapper-back, .content-wrapper {
   transform: translate3d(-5px, 0, -0.5px) scale(1.5);
 }
 .full {
@@ -73,6 +114,14 @@ ul {
 .half {
   height: 50vh;
   min-height: 300px;
+}
+.ten {
+  height: 10vh;
+  min-height: 60px;
+}
+.p {
+  padding: 0 3px 0 6px;
+  line-height: 1.8em;
 }
 @keyframes slide-side {
   from {
@@ -99,9 +148,8 @@ ul {
   animation-duration: 2.0s;
   margin: 0;
 }
-
-@media only screen and (max-height: 1080px) and (max-width: 1920px) {
-  .portfolio img {
-    width: 600px;
+/* @media only screen and (max-height: 1080px) and (max-width: 1920px) {
+  .awards img {
+    width: 400px;
   }
-}
+} */

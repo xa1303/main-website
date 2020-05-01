@@ -1,0 +1,13 @@
+#more :checked ~ div {
+  height: auto;
+}
+
+.content {
+  height: 3.6em;
+  overflow: hidden;
+  line-height: 1.2em;
+}
+
+.diff {
+  background-color: #333333;
+}
