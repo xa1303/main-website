@@ -6,7 +6,7 @@ html, body {
   height: 100vh;
   padding: 0;
   margin: 0 auto;
-  font-size: large;
+  font-size: 1rem;
   font-weight: 500;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -106,9 +106,6 @@ button {
   border-radius: 4vh;
   text-align: center;
 }
-button a {
-  font-size: 2.2vh;
-}
 .here, .here a {
   background-color: #b48ead;
   color: #2e3440;
@@ -164,33 +161,8 @@ button a {
   padding: 0 3px 0 6px;
   line-height: 1.8em;
 }
-@keyframes slide-side {
-  from {
-    margin-left: 100%;
-    width: 400%;
-  }
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-.slide-slow, .slide-slower, .slide-slowest {
-  animation-name: slide-side;
-  animation-iteration-count: 1;
-  overflow-x: hidden;
-}
-.slide-slow {
-  animation-duration: 1.0s;
-}
-.slide-slower {
-  animation-duration: 1.5s;
-}
-.slide-slowest {
-  animation-duration: 2.0s;
-  margin: 0;
-}
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
   html, body {
     font-size: 2vh;
   }
-}
+} */
