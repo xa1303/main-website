@@ -1,7 +1,7 @@
 html, body {
   font-family: "Century Gothic";
   color: #81a1c1;
-  background-color: #373d4a;
+  background-color: #2e3440;
   text-align: left;
   height: 100vh;
   padding: 0;
@@ -109,36 +109,17 @@ button {
   background-color: #373d4a;
   padding: 1.25vh;
   margin: 1.5vh 3vh 0 0;
-  border-radius: 5vh;
+  border-radius: 4vh;
+  text-align: center;
 }
-button:hover, button:hover a, .code-button:hover, .code-button:hover a{
-  cursor: pointer;
-  color: #2e3440;
-}
-button:hover, button:hover a {
-  background-color: #b48ead;
-}
-.code-button:hover, .code-button:hover a {
-  background-color: #81a1c1;
-}
-.code-button {
-  border: none;
-  background-color: #373d4a;
-  padding: 1.5vh;
-  margin: 16px 20px 0 0;
-  border-radius: 40px;
-}
-.code-button a {
-  color: #81a1c1;
+button a {
+  font-size: 2.5vh;
 }
 .here, .here a {
   background-color: #b48ead;
   color: #2e3440;
 }
-.here-sub, .here-sub a {
-  background-color: #81a1c1;
-  color: #2e3440;
-}
+
 .main-wrapper {
   position: relative;
   perspective: 1px;
