@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intitial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <title>Projects</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+
+  <body>
+    <div class='content'>
+      <div class="title">
+        <h1>Projects</h1>
+        <a href="https://github.com/xa1303?tab=repositories" target="_blank"><img src="icons/github.svg" alt=""></a>
+      </div>
+      <div class="link">
+          <button><a href="index">home</a></button>
+          <button><a href="awards">awards</a></button>
+          <button class="here"><a href="projects">projects</a></button>
+          <button><a href="index#about">about me</a></button>
+          <button><a href="story">my story</a></button>
+      </div>
+      <div class="ten"></div>
+      <h3><span class="smol">js </span>Discordbot: word of the day</h3>
+      <p>
+        <span class="smol">Usage: <code>.wotd</code></span><br />
+        This command gets <code>dictionary.com</code>'s word of the day.
+      </p>
+      <p>
+        <img src="pics/wotd.png" alt="">
+      </p>
+      <h4>Code:</h4>
+      <pre><code>   const needle = require("needle");
+    const cheerio = require("cheerio");
+    
+    module.exports = {
+      do: async (msg) => {
+        try {
+          const request = await needle("get", "https://www.dictionary.com/e/word-of-the-day/");
+          const $ = cheerio.load(request.body);
+          const wotd = $("html body div div div div div div[data-is-latest-post='true'] div div div div h1").text().replace(/\s\s+/);
+          const wotdTerm = $("html body div div div div div div[data-is-latest-post='true'] div div div div div p span span").text();
+          const wotdMeaning = $("html body div div div div div div[data-is-latest-post='true'] div div div div div p").next().text();
+          msg.channel.createMessage(`word of the day:\n\*\*${wotd}\*\*\n\*${wotdTerm}\*\n${wotdMeaning}`);
+        }
+        catch(err) {
+          msg.channel.createMessage("There was a poblem!");
+        }
+      }
+    }
+      </code></pre>
+      <h3>Caesar Cipher: encoding and decoding</h3>
+      <p>
+        <span class="smol">To decode or encode?</span><br />
+        This asks whether the user wants to encode or decode a message. The user is prompted with <code>Do you want to encode(e) or decode(d)? </code>
+        The user can enter <code>e</code> if he wants to encode a message, or <code>d</code> if he wants to decode a message. Casing doesn't matter.
+      </p>
+      <pre><code>  while True:    
+    choice = input('Do you want to encode(e) or decode(d)? ')
+    if choice.lower() == 'e':
+      msg = str(input('Message to encode: '))
+      print(f'Encoded message: {encode(msg)}')
+      break
+    elif choice.lower() == 'd':
+      msg = str(input('Message to decode: '))
+      for key in range(26):
+        print(f'Key: {key:&lt;2} Decoded message: {decode(msg, key)}')
+      break
+      </code></pre>
+      <p>
+        <span class="smol">To encode</span><br />
+        The user enters <code>e</code>. The user is prompted with <code>Key? </code>He can enter any integer. He chooses 16.
+        Next he is prompted with <code>Message to encode: </code> and enters <code>Hello world</code>, which is then stored in 
+        the <code>msg</code> variable. The <code>encode(msg)</code> function is called.<br />
+      </p>
+      <pre><code>  $ py Caesar.py
+  Do you want to encode(e) or decode(d)? e
+  Message to encode: Hello world
+  Key? 16
+  Encoded message: Xubbe mehbt
+      </code></pre>
+      <h4>Encode function </h4>
+      <pre><code>  def encode(msg):
+    encoded = []
+    # Checks for invalid key inputs
+    while True:
+      try:
+        key = int(input('key? '))
+        key %= 26
+        break
+      except:
+        pass
+    for c in msg:
+      if c.isupper():
+        encoded_c = string.ascii_uppercase.index(c) + key
+        if encoded_c > 25:
+          encoded_c -= 26
+        encoded.append(string.ascii_uppercase[encoded_c])
+      elif c.islower():
+        encoded_c = string.ascii_lowercase.index(c) + key
+        if encoded_c > 25:
+          encoded_c -= 26
+        encoded.append(string.ascii_lowercase[encoded_c])
+      else:
+        encoded.append(c)
+    return ''.join(encoded)
+      </code></pre>
+      <p>
+        <span class="smol">To decode</span><br />
+        The user enters <code>d</code>. The decode(self) method is called. The user is prompted with <code>Message to decode:  </code>. He enters <code>Hello world</code>.
+        Next he is prompted with <code>Message to encode: </code> and enters <code>Xubbe mehbt</code>. A list of all possible
+        decrypted messages is printed.<br />
+      </p>
+      <pre><code>  $ py Caesar.py
+  Do you want to encode(e) or decode(d)? d
+  Message to decode: Xubbe mehbt
+  ...
+  Key: 14 Decoded message: Jgnnq yqtnf
+  Key: 15 Decoded message: Ifmmp xpsme
+  Key: 16 Decoded message: Hello world
+  Key: 17 Decoded message: Gdkkn vnqkc
+  Key: 18 Decoded message: Fcjjm umpjb
+  ...
+      </code></pre>
+      <h4>Decode function:</h4>
+      <pre><code>  def decode(msg, key):
+    decoded = []
+    for c in msg:
+      if c.isupper():
+        decoded_c = string.ascii_uppercase.index(c) - key
+        if decoded_c < 0:
+          decoded_c += 26
+        decoded.append(string.ascii_uppercase[decoded_c])
+      elif c.islower():
+        decoded_c = string.ascii_lowercase.index(c) - key
+        if decoded_c < 0:
+          decoded_c += 26
+        decoded.append(string.ascii_lowercase[decoded_c])
+      else:
+        decoded.append(c)
+    return ''.join(decoded)
+      </code></pre>
+      <h3>Prime factors</h3>
+      <p>
+        <span class="smol">Finding prime factors</span><br />
+        This programs finds the prime factors of a positive integer.
+      </p>
+      <pre><code>  def primeFactorsOf(num):
+    factors = []
+    for n in range(2,num+1):
+      isPrime = True
+      for i in range(2,n+1):
+        if n % i == 0 and n != 2:
+          isPrime = False
+        while isPrime:
+          if num % n == 0:
+            factors.append(n)
+            num = num//n
+          else:
+            isPrime = False
+    return factors
+  print(primeFactorsOf(600))
+      </code></pre>
+      <h4>Running the program:</h4>
+      <pre><code>  $ py Prime_factorise.py
+  [2, 2, 2, 3, 5, 5]
+      </code></pre>
+      <h3>Number pyramid</h3>
+      <p>Gets an integer input <code>x</code> from the user and forms a number pyramid with <code>x</code> as the base.</p>
+      <pre><code>  x = int(input('pyramid base: '))
+  for n in range(1, x + 1):
+    if x < 10:
+      print('  '*(x - n) + str(n) + (n - 1)*('   ' + str(n)))
+    else:
+      if n < 10:
+        print('  '*(x - n + 1) + str(n) + (n - 1)*('   ' + str(n)))
+      else:
+        print('  '*(x - n + 1) + str(n) + (n - 1)*('  ' + str(n)))
+      </code></pre>
+      <h4>Running the program:</h4>
+      <pre><code>  $ py pyramid.py
+  pyramid base: 10
+                      1
+                    2   2
+                  3   3   3
+                4   4   4   4
+              5   5   5   5   5
+            6   6   6   6   6   6
+          7   7   7   7   7   7   7
+        8   8   8   8   8   8   8   8
+      9   9   9   9   9   9   9   9   9
+    10  10  10  10  10  10  10  10  10  10
+      </code></pre>
+      <h3>Rock paper scissors</h3>
+      <p>
+        <span class="smol">Saisho wa gu! Jan... ken... GUU!</span><br />
+        Basically a script that lets you play rock paper scissors against the computer. At first this was 70+ lines with many <code>if else</code> statements...
+      </p>
+      <pre><code>  import random
+  def f1():
+    x = input("'r'(rock), 'p'(paper), 's'(scissors): ")
+    if x.lower() == 'q':
+      exit()
+    y = random.choice(['r','p','s'])
+    f = str(x + y)
+    if f == 'rr' or f == 'pp' or f == 'ss':
+      print("DRAW")
+    elif f == 'rp' or f == 'ps' or f == 'sr':
+      print("LOSE")
+    elif f == 'rs' or f == 'sp' or f == 'pr':
+      print("WIN")
+    f1()                       
+  f1()
+      </code></pre>
+      <h4>Time to play!</h4>
+      <pre><code>  $ py rockpaperscissors.py
+  'r'(rock), 'p'(paper), 's'(scissors): r
+  LOSE
+  'r'(rock), 'p'(paper), 's'(scissors): p
+  DRAW
+  'r'(rock), 'p'(paper), 's'(scissors): s
+  WIN
+      </code></pre>
+      <h3>Password generator</h3>
+      <p>
+        <span class="smol">Want a super strong password?</span><br />
+        This program generates a password that includes uppercase and lowercase alphabets, digits and symbols.
+      </p>
+      <pre><code>  import string
+  import random
+            
+  lc = string.ascii_lowercase
+  uc = string.ascii_uppercase
+  sym = string.punctuation
+  no = string.digits
+            
+  while True:
+    try: # checks if input type is int
+      i = int(input('Length of password(min 8): '))        
+    except:
+      continue
+    else: 
+      if i > 7:
+         break
+  while True:
+    pw = []
+    for x in range(i):
+      pw.append(random.choice(lc + uc + sym + no))
+    if set(pw) & set(uc) != {} and set(pw) & set(lc) != {} and set(pw) & set(sym) != {} and set(pw) & set(no) != {}:
+      break
+    else:
+      False
+  print(f"your password is {''.join(pw)}")
+      </code></pre>
+      <h4>Get a strong password:</h4>
+      <pre><code>  $ py Password_generator.py
+  Length of password(min 8): 32
+  your password is D7xuf6)r}g+ZL93#myz%4T:&!^RH3B>: 
+      </code></pre>
+    </div>
+  </body>
+</html>

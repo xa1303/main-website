@@ -12,21 +12,21 @@
     <div class="main-wrapper">
       <div class="parallax-wrapper-back">
         <div class="full darker"></div>
-        <!-- <div class="full"></div> -->
         <div class="full"></div>
-        <div class="full dark">
-        </div>
-        
+        <div class="full dark"></div>
+        <div class="full dark"></div>  
+        <div class="ten dark"></div>
       </div>
-        
+      
       <div class="parallax-wrapper-front">
         <div class="full"></div>
+        <div class="ten"></div>
         <div class="ten"></div>
         <div class="ten"></div>
         <div class="full dark">
           <div class="content">
             <h3>Primary School</h3>
-            <h5>2010-2015<br /><span class="smol">early days</span></h5>
+            <h5>2012-2015<br /><span class="smol">early days</span></h5>
             <p>
               In primary school, I used to play games on my iPad, which had long waiting times for items, and it was boring to wait. 
               I browsed the internet for ways to overcome this problem and found out about Jailbreaking. 
@@ -61,9 +61,8 @@
             </p>
             <h5>June 2019<br /><span class="smol">website and workshops</span></h5>
             <p>
-              In June I started learning HTML and CSS to build my portfolio website for the EAE.
-              This is the website, if you're interested. It took me many hours to make and was frustrating at times 
-              because some of the code just couldn't work! It was up and working, eventually. 
+              In June I started learning HTML and CSS to build my portfolio website for the EAE. It took me many hours to make and was frustrating at times
+              because some of the code just couldn't work! It was up and working, eventually. The website you're on now is the much better version.
             </p>
             <p>
               I attended two workshops hosted by Nanyang Polytechnic
@@ -87,12 +86,31 @@
               many features) and Pixel Experience (Google Pixel firmware basically, with added features). I use a Google Pixel 2XL now since the Moto Z Play broke :( but am not using any 
               custom ROMs since it would break online banking functionality. 
             </p>
+            <h5>Apr 2020<br /><span class="smol">linux and JS</span></h5>
+            <p>
+              In this month, I tried installing Arch Linux on my laptop alongside Windows 10. I had learnt about Linux in June 2019 during the workshops I attended. I heard about Arch Linux in
+              December 2019 but failed countless times trying to install it. I resumed later in April 2020, where I finally succeeded. I learnt a lot about my laptop, including the different partitions,
+              how there is a system partition for the user and a boot partition for the boot manager where I installed GRUB2 (a bootloader that can chainload Window's boot manager) on and partitioning my laptop's SSD.
+              I also learnt much more about Linux, how 'everything is a file' and basic commandline tools.
+              I learnt how to build packages from git repositories on Arch Linux, which is done by using <code>git clone</code> and <code>makepkg</code>. 
+              Twice, I accidentally deleted the entire Windows boot directory and had to boot into Windows installation media to fix it.
+              It was distressing because I could not boot into Windows at all. 
+              I was so used to the linux command line then I am now using Git bash as my default shell in Windows Terminal.
+            </p>
+            <p>
+              In this month, I also delved into the world of Javascript and used NodeJS to create my very own Discord bot using the Eris library. I learnt about callbacks, promises and async await.
+              These tools are used since Javascript is a single-threaded programming language. Since there are many commands which may be added to the Discord bot, I learnt to modularise the project
+              by creating a folder for the command files, and exported them using <code>module.exports</code>. The main file would import these files and on the event of a message in the channel, would
+              check if it was a valid command. If it was, it would execute the command's function. I created a command, <code>.wotd</code> which grabs the word of the day from <code>dictionary.com</code>
+              and sends it to the text channel where the command was used. I learnt about HTTP requests and web-scraping during the process.
+            </p>
           </div>
         </div>
         <div class="full dark"></div>
         <div class="full dark"></div>
-        <div class="full dark"></div>
-
+        <div class="half dark"></div>
+        <div class="quart dark"></div>
+        <div class="ten dark"></div>
       </div>
         
       <div class="content-wrapper">
@@ -100,36 +118,25 @@
           <h1>My story</h1>
           <p>
             If you have no time to spare, fret not! I have a summary written here.<br />
-            2012-2015: Jailbroke my iOS devices, tweaked the devices and modded some games. Failed installing a custom ROM.<br />
-            2016-2018: Not much happened. Chanced upon Python, tried learning, was too confusing, gave up.<br />
-            2019: Got interested in IT, picked up Python, programmed my own website, attended several workshops and succeeded in flashing custom ROMs.<br />
-            2020: Successful install of Arch Linux after many failed attempts, started working on a Discord bot in NodeJS using Eris library (still in progress).
+            <span class="smol">2012-2015</span>: Jailbroke my iOS devices, tweaked the devices and modded some games. Failed installing a custom ROM.<br />
+            <span class="smol">2016-2018</span>: Not much happened. Chanced upon Python, tried learning, was too confusing, gave up.<br />
+            <span class="smol">2019</span>: Got interested in IT, picked up Python, programmed my own website, attended several workshops and succeeded in flashing custom ROMs.<br />
+            <span class="smol">2020</span>: Successful install of Arch Linux after many failed attempts, started working on a Discord bot in NodeJS using Eris library (still in progress).
           </p>
           <div class="link">
-            <!-- <div> -->
-              <button class="main"><a href="index">home</a></button>
-              <button><a href="#contact">contact</a></button>
-              </button>
-            <!-- </div> -->
-            <!-- <div class="center"> -->
-              <button><a href="awards">awards</a></button>
-              <button><a href="projects">projects</a></button>
-            <!-- </div> -->
-            <!-- <div> -->
-              <button><a href="#about">about me</a></button>
-              <button class="here"><a href="story">my story</a></button>
-            <!-- </div> -->
+            <button><a href="index">home</a></button>
+            <button><a href="awards">awards</a></button>
+            <button><a href="projects">projects</a></button>
+            <button><a href="#about">about me</a></button>
+            <button class="here"><a href="story">my story</a></button>
           </div>
 
-          <!-- </div> -->
         </div>
         <div class="half"></div>
         <div class="full"></div>
         <div class="full"></div>
         <div class="full"></div>
-        <div class="full"></div>
-        <div class="full"></div>
-          <!-- <div class="content"> -->
+        <div class="ten"></div>
       </div>
     </div>
   </body>

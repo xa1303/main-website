@@ -2,7 +2,7 @@ html, body {
   font-family: "Century Gothic";
   color: #81a1c1;
   background-color: #2e3440;
-  text-align: center;
+  text-align: left;
   height: 100vh;
   padding: 0;
   margin: 0 auto;
@@ -10,6 +10,19 @@ html, body {
   font-weight: 500;
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+p, h1, h2, h3, h4, h5, h6, ul, li, .link { 
+    padding: 0 20px;
+  }
+::-webkit-scrollbar {
+  height: 10px;              /* height of horizontal scrollbar ← You're missing this */
+  width: 10px;               /* width of vertical scrollbar */
+}
+::-webkit-scrollbar-track {
+  background-color: #373d4a;       /* color of the tracking area */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #b48ead;    /* color of the scroll thumb */
 }
 #about {
   scroll-behavior: smooth;
@@ -44,32 +57,43 @@ ul {
   padding: 0;
   width: 100%;
 }
-.awards {
+
+.awards, pre {
+  overflow: auto;
+}
+code {
+  color: #d8dee9;
+}
+pre {
+  text-align: left;
+  background-color: #21252E;
+  padding: 16px 0 0 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  height: auto;
+}
+.code::-webkit-scrollbar-track { background-color: #21252E; }
+.code::-webkit-scrollbar-thumb { background-color: #81a1c1;}
+.code::-webkit-scrollbar, pre::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.awards, .title {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  overflow: auto;
-}
-.awards img {
+} 
+img {
   max-height: 100vh;
   max-width: 100vw;
 }
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* position: relative; */
-  margin: 0 auto;
-  max-width: 768px;
-  min-height: 600px;
+.title a {
+  margin: auto 0;
+  overflow-x: hidden
 }
 .link {
-  align-items: center;
-  justify-content: center;
+  align-items: left;
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: row; */
 }
 button:hover, button:hover a {
   cursor: pointer;
@@ -80,12 +104,36 @@ button:hover, button:hover a {
 button {
   border: none;
   background-color: #373d4a;
-  padding: 8px;
-  margin: 10px;
+  padding: 1.25vh;
+  margin: 10px 20px 0 0;
   border-radius: 25px;
+}
+button:hover, button:hover a, .code-button:hover, .code-button:hover a{
+  cursor: pointer;
+  color: #2e3440;
+}
+button:hover, button:hover a {
+  background-color: #b48ead;
+}
+.code-button:hover, .code-button:hover a {
+  background-color: #81a1c1;
+}
+.code-button {
+  border: none;
+  background-color: #373d4a;
+  padding: 1.5vh;
+  margin: 16px 20px 0 0;
+  border-radius: 40px;
+}
+.code-button a {
+  color: #81a1c1;
 }
 .here, .here a {
   background-color: #b48ead;
+  color: #2e3440;
+}
+.here-sub, .here-sub a {
+  background-color: #81a1c1;
   color: #2e3440;
 }
 .main-wrapper {
@@ -94,7 +142,7 @@ button {
   height: 100vh;
   margin: 0 auto;
   padding: 0;
-  overflow: auto;
+  overflow-x: hidden;
 }
 .parallax-wrapper-back, .parallax-wrapper-front, .content-wrapper {
   position: absolute;
@@ -105,7 +153,18 @@ button {
   height: 100vh;
 }
 .parallax-wrapper-back, .content-wrapper {
-  transform: translate3d(-5px, 0, -0.5px) scale(1.5);
+  transform: translate3d(0, 0, -0.5px) scale(1.5);
+}
+.content, .quart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 5px;
+  max-width: 900px;
+}
+.content {
+  min-height: 600px;
 }
 .full {
   height: 100vh;
@@ -114,6 +173,10 @@ button {
 .half {
   height: 50vh;
   min-height: 300px;
+}
+.quart {
+  height: 25vh;
+  min-height: 150px;
 }
 .ten {
   height: 10vh;
@@ -148,8 +211,28 @@ button {
   animation-duration: 2.0s;
   margin: 0;
 }
-/* @media only screen and (max-height: 1080px) and (max-width: 1920px) {
-  .awards img {
-    width: 400px;
+/* @media only screen and (min-height: 1024px) and (min-width: 768px) {
+  p, h1, h2, h3, h4, h5, h6, ul, .link { 
+    padding: 0 20px;
   }
-} */
+}
+*/
+@media only screen and (min-height: 1024px) and (min-width: 768px) {
+  html, body, button {
+    font-size: 24px;
+  }
+  .button {
+    margin: 16px 24px 0 0;
+    border-radius: 40px;
+  }
+}
+@media only screen and (max-height: 1024px) and (max-width: 540px) {
+  html, body, button {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-height: 768px) and (max-width: 480px) {
+  html, body, button {
+    font-size: 12px;
+  }
+}
