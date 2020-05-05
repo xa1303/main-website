@@ -86,23 +86,40 @@
               many features) and Pixel Experience (Google Pixel firmware basically, with added features). I use a Google Pixel 2XL now since the Moto Z Play broke :( but am not using any 
               custom ROMs since it would break online banking functionality. 
             </p>
-            <h5>Apr 2020<br /><span class="smol">linux and JS</span></h5>
+            <h5>Apr 2020<br /><span class="smol">Linux, JS and this website</span></h5>
             <p>
-              In this month, I tried installing Arch Linux on my laptop alongside Windows 10. I had learnt about Linux in June 2019 during the workshops I attended. I heard about Arch Linux in
+              This was a very packed month indeed. I learnt about Linux and Javascript, and created this website from scratch.
+            </p>
+            <p>
+              I tried installing Arch Linux on my laptop alongside Windows 10. I had learnt about Linux in June 2019 during the workshops I attended. I heard about Arch Linux in
               December 2019 but failed countless times trying to install it. I resumed later in April 2020, where I finally succeeded. I learnt a lot about my laptop, including the different partitions,
               how there is a system partition for the user and a boot partition for the boot manager where I installed GRUB2 (a bootloader that can chainload Window's boot manager) on and partitioning my laptop's SSD.
               I also learnt much more about Linux, how 'everything is a file' and basic commandline tools.
               I learnt how to build packages from git repositories on Arch Linux, which is done by using <code>git clone</code> and <code>makepkg</code>. 
               Twice, I accidentally deleted the entire Windows boot directory and had to boot into Windows installation media to fix it.
               It was distressing because I could not boot into Windows at all. 
-              I was so used to the linux command line then I am now using Git bash as my default shell in Windows Terminal.
+              I was so used to the linux command line that I am now using Git bash as my default shell in Windows Terminal.
             </p>
             <p>
-              In this month, I also delved into the world of Javascript and used NodeJS to create my very own Discord bot using the Eris library. I learnt about callbacks, promises and async await.
+              I delved into the world of Javascript and used NodeJS to create my very own Discord bot using the Eris library. I learnt about callbacks, promises and async await.
               These tools are used since Javascript is a single-threaded programming language. Since there are many commands which may be added to the Discord bot, I learnt to modularise the project
               by creating a folder for the command files, and exported them using <code>module.exports</code>. The main file would import these files and on the event of a message in the channel, would
               check if it was a valid command. If it was, it would execute the command's function. I created a command, <code>.wotd</code> which grabs the word of the day from <code>dictionary.com</code>
-              and sends it to the text channel where the command was used. I learnt about HTTP requests and web-scraping during the process.
+              and sends it to the text channel where the command was used. I learnt a bit about HTTP requests and web-scraping during the process.
+            </p>
+            <p>
+              I decided to recreate my website since the old one did not look very pleasing to me. For comparison, <a class="a" href="https://xaeiou.netlify.app" target="_blank">this</a> is
+              the old website. I also wanted to add features like parallax scrolling and a much better theme. I'm using my favourite colour scheme, <a class="a" href="https://www.nordtheme.com/">Nord</a>, which I also use in VS Code.
+              It took me many days and countless hours to make, but I am glad with the final result. The hardest part for me was the parallax scrolling. I spent many hours trying to understand the concept and when I got it
+              to work, I couldn't click on hyperlinks and learnt that it was because of the Z-index of the different elements.
+              <br /><br />
+              <span class="smol">This is how I made the parallax scrolling effect:</span><br />
+              I have one main wrapper <code>main-wrapper</code>, which contains three other wrappers <code>parallax-wrapper-front</code>, <code>parallax-wrapper-back</code> and <code>content-wrapper</code>.
+              <code>parallax-wrapper-front</code> has normal scroll speed while the other two have slower scroll speeds. The three wrappers are stacked on top of each other by applying the <code>position: absolute</code>
+              property to each wrapper, setting the <code>top</code>, <code>bottom</code>, <code>left</code> and <code>right</code> values to <code>0</code>. The topmost layer is <code>content-wrapper</code> (so that hyperlinks
+              are clickable, since hyperlinks that are in the back aren't clickable). The middle layer is <code>parallax-wrapper-front</code> and the last layer is <code>parallax-wrapper-back</code>. If there are links that I want
+              to add, I'll use <code>content-wrapper</code> with an invisible background so that it doesn't disrupt the parallax effect. If you need help visualising, take a look at
+              <a class="a" href="https://keithclark.co.uk/articles/pure-css-parallax-websites/demo3/">this</a>. I found it very helpful.
             </p>
           </div>
         </div>

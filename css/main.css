@@ -39,6 +39,10 @@ h5 {
 .smol {
   color: #b48ead;
 }
+.a {
+  color: #ebcb8b;
+  text-decoration: #ebcb8b dotted;
+}
 .dark {
   background-color: #373d4a;
 }
@@ -158,8 +162,4 @@ button {
 .ten {
   height: 10vh;
   min-height: 60px;
-}
-.p {
-  padding: 0 3px 0 6px;
-  line-height: 1.8em;
 }
