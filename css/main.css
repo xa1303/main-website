@@ -6,7 +6,7 @@ html, body {
   height: 100vh;
   padding: 0;
   margin: 0 auto;
-  font-size: 2vh;
+  font-size: large;
   font-weight: 500;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -28,10 +28,10 @@ p, h1, h2, h3, h4, h5, h6, ul, li, .link {
   scroll-behavior: smooth;
 }
 h1 {
-  color: #d8dee9
+  color: #d8dee9;
 }
 h3 {
-  color: #a3be8c
+  color: #a3be8c;
 }
 h5 {
   color: #88c0d0;
@@ -189,28 +189,8 @@ button a {
   animation-duration: 2.0s;
   margin: 0;
 }
-/* @media only screen and (min-height: 1024px) and (min-width: 768px) {
-  p, h1, h2, h3, h4, h5, h6, ul, .link { 
-    padding: 0 20px;
+@media only screen and (max-width: 500px) {
+  html, body {
+    font-size: 2vh;
   }
 }
-*/
-/* @media only screen and (min-height: 1024px) and (min-width: 768px) {
-  html, body, button {
-    font-size: 24px;
-  }
-  .button {
-    margin: 16px 24px 0 0;
-    border-radius: 40px;
-  }
-}
-@media only screen and (max-height: 1024px) and (max-width: 540px) {
-  html, body, button {
-    font-size: 14px;
-  }
-}
-@media only screen and (max-height: 768px) and (max-width: 480px) {
-  html, body, button {
-    font-size: 20px;
-  }
-} */
