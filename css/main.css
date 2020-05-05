@@ -97,7 +97,9 @@ button:hover, button:hover a {
   background-color: #b48ead;
   color: #2e3440;
 }
-
+button a {
+  font-size: 1em;
+}
 button {
   border: none;
   background-color: #373d4a;
