@@ -11,6 +11,9 @@ html, body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+a {
+  font-size: 2vh;
+}
 p, h1, h2, h3, h4, h5, h6, ul, li, .link { 
     padding: 0 20px;
   }
@@ -106,7 +109,7 @@ button {
   background-color: #373d4a;
   padding: 1.25vh;
   margin: 10px 20px 0 0;
-  border-radius: 25px;
+  border-radius: 5vh;
 }
 button:hover, button:hover a, .code-button:hover, .code-button:hover a{
   cursor: pointer;
