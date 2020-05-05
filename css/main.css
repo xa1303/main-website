@@ -6,7 +6,7 @@ html, body {
   height: 100vh;
   padding: 0;
   margin: 0 auto;
-  font-size: 1em;
+  font-size: 2.1vh;
   font-weight: 500;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -161,8 +161,3 @@ button {
   padding: 0 3px 0 6px;
   line-height: 1.8em;
 }
-/* @media only screen and (max-width: 500px) {
-  html, body {
-    font-size: 2vh;
-  }
-} */
