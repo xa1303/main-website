@@ -1,6 +1,9 @@
 media_folder: "/pics"
 public_folder: "/pics"
 
+backend:
+  name: git-gateway
+  branch: master
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
