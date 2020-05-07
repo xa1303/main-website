@@ -41,7 +41,7 @@ h5 {
 }
 .a {
   color: #ebcb8b;
-  text-decoration: #ebcb8b dotted;
+  text-decoration: underline;
 }
 .dark {
   background-color: #373d4a;
