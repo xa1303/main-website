@@ -39,13 +39,13 @@
         try {
           const request = await needle("get", "https://www.dictionary.com/e/word-of-the-day/");
           const $ = cheerio.load(request.body);
-          const wotd = $("html body div div div div div div[data-is-latest-post='true'] div div div div h1").text().replace(/\s\s+/);
-          const wotdTerm = $("html body div div div div div div[data-is-latest-post='true'] div div div div div p span span").text();
-          const wotdMeaning = $("html body div div div div div div[data-is-latest-post='true'] div div div div div p").next().text();
+          const wotd = $("html").find("div[data-is-latest-post='true']").find("div.wotd-item-headword__word h1").text();
+          const wotdTerm = $("html").find("div[data-is-latest-post='true']").find("div.wotd-item-headword__pos-blocks p:not(:last-child)").text().replace(/\s  +/g, "")
+          const wotdMeaning = $("html").find("div[data-is-latest-post='true']").find("div.wotd-item-headword__pos-blocks p:last-child").text();
           msg.channel.createMessage(`word of the day:\n\*\*${wotd}\*\*\n\*${wotdTerm}\*\n${wotdMeaning}`);
         }
         catch(err) {
-          msg.channel.createMessage("There was a poblem!");
+          msg.channel.createMessage("There was a problem!");
         }
       }
     }
