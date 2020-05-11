@@ -87,6 +87,7 @@ pre {
   flex-direction: row;
 }
 img {
+  max-height: 100vh;
   max-width: 100%;
 }
 .title a {
