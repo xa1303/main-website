@@ -39,10 +39,11 @@
       try {
         const request = await needle("get", "https://www.dictionary.com/e/word-of-the-day/");
         const $ = cheerio.load(request.body);
-        const wotd = $("html").find("div[data-is-latest-post='true']").find("div.wotd-item-headword__word h1").text();
-        const wotdTerm = $("html").find("div[data-is-latest-post='true']").find("div.wotd-item-headword__pos-blocks p:not(:last-child)").text().replace(/\s  +/g, "")
+        const wotd = $("html").find("div[data-is-latest-post='true']").attr("data-title");
+        const date = $("html").find("div[data-is-latest-post='true']").attr("data-date");
+        const wotdTerm = $("html").find("div[data-is-latest-post='true']").find("div.wotd-item-headword__pos-blocks p:not(:last-child)").text().replace(/\s+/g, "")
         const wotdMeaning = $("html").find("div[data-is-latest-post='true']").find("div.wotd-item-headword__pos-blocks p:last-child").text();
-        msg.channel.createMessage(`word of the day:\n\*\*${wotd}\*\*\n\*${wotdTerm}\*\n${wotdMeaning}`);
+        msg.channel.createMessage(`word of the day - ${date}:\n\*\*${wotd}\*\*\n\*${wotdTerm}\*\n${wotdMeaning}`);
       }
       catch(err) {
         msg.channel.createMessage("There was a problem!");
