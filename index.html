@@ -55,23 +55,11 @@
             <button class="here"><a href="index">home</a></button>
             <button><a href="awards">awards</a></button>
             <button><a href="projects">projects</a></button>
-            <button><a href="index#about">about me</a></button>
             <button><a href="journey">my journey</a></button>
           </div>
         </div>
       </div>
 
     </div>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>
